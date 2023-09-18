@@ -1,0 +1,22 @@
+#M1 {
+    background-color: gold;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.text em {
+    background-color: blue;
+
+
+}
+
+
+
+footer nav a {
+    color: green;
+}
+
+.top {
+    text-transform: uppercase;
+    background-color: red;
+}
