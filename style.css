@@ -4,19 +4,106 @@
     color: #000;
 }
 
+body {
+    background-color: lightblue;
+}
+
 .text em {
     background-color: blue;
 
 
 }
 
+h2 {
+    font-family: sans-serif;
+}
+
+a {
+    font-family: sans-serif;
+}
+
+.heading {
+    text-transform: capitalize;
+}
+
+h2~p::first-letter {
+    font-size: x-large;
+}
+
+table :hover {
+    background-color: yellow;
+    color: #000;
+}
+
+header {
+    background-color: rgb(160, 201, 226);
+    color: #000;
+    padding-top: 5px;
+    margin: -10px;
 
 
-footer nav a {
+}
+
+header h1 {
+    font-family: sans-serif;
+    padding-left: 14px;
+}
+
+header nav {
+    background-color: rgb(145, 191, 206);
+}
+
+header nav a {
     color: green;
+    padding: 8px;
+}
+
+header nav ul {
+    display: inline;
+    padding-left: 14px;
+    list-style-type: none;
+}
+
+header nav li {
+    margin: 0;
+    padding: 0;
+}
+
+header nav li:hover {
+    background-color: lightcoral;
 }
 
 .top {
     text-transform: uppercase;
     background-color: red;
+}
+
+nav li a {
+    text-decoration: none;
+}
+
+nav li:first-child a {
+    text-decoration: underline;
+}
+
+::selection {
+    background: firebrick;
+}
+
+body :hover {
+    cursor: pointer;
+}
+
+.input {
+
+    height: 20px;
+
+}
+
+input[type="text"] {
+    border-color: lightgray;
+}
+
+input[name="message"] {
+    height: 50px;
 }

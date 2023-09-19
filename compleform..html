@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <header>
+    <link rel="stylesheet" href="style.css">
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>compleform</title>
-        <link rel="stylesheet" href="dark-theme.CSS">
+
     </head>
 </header>
 <main>
@@ -15,7 +16,8 @@
         <form action="mailto: mohmmed1422@hotmil.com" method="POST" enctype="text/plain">
             <div>
                 <label for="massge">Inter suggestion</label>
-                <input type="text" name=" " id="massge" list="option" placeholder="thanks for you" autocomplete="on" />
+                <input class="input" type="text" name="message" id="massge" list="option" placeholder="thanks for you"
+                    autocomplete="on" />
                 <br />
             </div>
 
@@ -34,33 +36,33 @@
             <fieldset>
                 <legend>What do you think about my page</legend>
                 <div>
-                    <input type="radio" value="Great" id="Great" name="rate" />
+                    <input class="input" type="radio" value="Great" id="Great" name="rate" />
                     <label for="Great">Great</label>
 
-                    <input type="radio" value="Good" id="Good" name="rate" />
+                    <input class="input" type="radio" value="Good" id="Good" name="rate" />
                     <label for="Good">Good</label>
 
-                    <input type="radio" value="Bad" id="Bad" name="rate" />
+                    <input class="input" type="radio" value="Bad" id="Bad" name="rate" />
                     <label for="Bad">Bad</label>
                 </div>
             </fieldset>
         </form>
         <form>
-            <input type="date" id="birthdate" />
+            <input class="input" type="date" id="birthdate" />
             <label for="birthdate">inter your birthdate</label>
 
         </form>
 
         <form>
-            <input type="range" id="satsfai" />
+            <input class="input" type="range" id="satsfai" />
             <label for="satsfai">do you feel comfertable when you use this page?</label>
         </form>
         <form action="">
-            <input type="checkbox" id="promis" />
+            <input class="input" type="checkbox" id="promis" />
             <label for="promis">do you agree to share this information</label>
         </form>
         <form action="thankyou.html">
-            <input type="submit" value="submit">
+            <input class="input" type="submit" value="submit">
         </form>
 
     </body>
