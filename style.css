@@ -268,3 +268,77 @@ input[type="text"] {
 input[name="message"] {
     height: 50px;
 }
+
+.loader {
+    margin: auto;
+    border: 20px solid #000000;
+    border-radius: 75%;
+    border-top: 20px solid #ffffff;
+    width: 200px;
+    height: 200px;
+    animation: spinner 4s linear infinite;
+    visibility: hidden;
+    transition: visibility 3s;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+body img {
+    border-radius: 100%;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+.contentFadeIn {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
