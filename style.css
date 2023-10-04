@@ -110,8 +110,9 @@ header {
     border-radius: 16px;
 }
 
-header nav ul {
+nav ul {
     display: flex;
+    flex-direction: row;
     padding: 24px 42px;
     display: none;
     justify-content: space-between;
@@ -121,6 +122,16 @@ header nav ul {
     align-self: stretch;
     flex-wrap: wrap;
     list-style-type: none;
+}
+
+nav li :hover {
+    background-color: orange;
+}
+
+a button {
+    position: fixed;
+    left: 70px;
+    top: 30px;
 }
 
 
@@ -138,25 +149,25 @@ header nav ul {
     }
 }
 
-header nav ul :nth-child(1) {
+nav ul :nth-child(1) {
     opacity: 0;
     animation: fadeInUp 0.5s ease 0.5s forwards;
 
 }
 
-header nav ul :nth-child(2) {
+nav ul :nth-child(2) {
     opacity: 0;
     animation: fadeInUp 1s ease 1s forwards;
 
 }
 
-header nav ul :nth-child(3) {
+nav ul :nth-child(3) {
     opacity: 0;
     animation: fadeInUp 1.5s ease 1.5s forwards;
 
 }
 
-header nav ul :nth-child(4) {
+nav ul :nth-child(4) {
     opacity: 0;
     animation: fadeInUp 2s ease 2s forwards;
 
@@ -171,18 +182,39 @@ header nav ul :nth-child(4) {
     margin: 3px 0;
 }
 
-.hamburger-menu :hover {
+.hamburger-menu {
+    /* position: fixed; */
+    /* left: 70px;
+    top: 50px; */
+    background-color: rgb(160, 201, 226);
+    border-radius: 25px;
+    background-position: left;
+}
+
+.hamburger-menu:hover {
 
 
-    flex-direction: column;
+
     cursor: pointer;
+
 }
 
 .hamburger-menu:hover {
     .show {
         display: flex;
+        flex-direction: column;
+
     }
 }
+
+#navbar {
+    position: fixed;
+    left: 70px;
+    top: 50px;
+
+}
+
+.watermark {}
 
 
 
@@ -277,8 +309,7 @@ input[name="message"] {
     width: 200px;
     height: 200px;
     animation: spinner 4s linear infinite;
-    visibility: hidden;
-    transition: visibility 3s;
+
 
 
 
