@@ -129,9 +129,15 @@ nav li :hover {
 }
 
 a button {
+    width: 20px;
+    height: 15px;
     position: fixed;
-    left: 70px;
+    left: 0px;
     top: 30px;
+    font-size: 10px;
+    overflow: hidden;
+    padding: 0%;
+
 }
 
 
@@ -214,7 +220,7 @@ nav ul :nth-child(4) {
 
 }
 
-.watermark {}
+
 
 
 
@@ -401,6 +407,7 @@ body img {
 }
 
 .card {
+    background-color: lightblue;
     display: flex;
     justify-content: space-between;
     /* Push title and date to opposite sides */
