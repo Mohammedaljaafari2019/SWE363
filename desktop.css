@@ -1,0 +1,69 @@
+@media screen and (min-width: 770px) {
+    /* Define your CSS rules for larger screens here */
+
+    /* Example styles: */
+    html {
+
+        @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@300&family=Rubik:wght@300&display=swap');
+    }
+
+
+    .container {
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    nav {
+        display: flex;
+        padding: 24px 42px;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        row-gap: 24px;
+        align-self: stretch;
+        flex-wrap: wrap;
+    }
+
+    header {
+        display: flex;
+        padding: 42px 24px;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 42px 68px;
+        align-self: stretch;
+        flex-wrap: wrap;
+        font-family: Epilogue;
+        font-size: 68px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    body h2 {
+        font-family: Epilogue;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 27px;
+        /* 158.824% */
+    }
+
+    figure {
+        display: flex;
+        padding: 42px 24px;
+        flex-direction: column;
+        align-items: center;
+        gap: 42px;
+        align-self: stretch;
+    }
+
+    footer {
+        display: flex;
+        padding: 42px 24px 86px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+}
