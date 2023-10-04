@@ -373,3 +373,52 @@ body img {
         opacity: 1;
     }
 }
+
+.watermarked-image-container {
+    position: relative;
+    /* Required for absolute positioning */
+    display: inline-block;
+    /* Ensures the container wraps the image */
+}
+
+.watermarked-image-container::before {
+    content: 'MAA';
+    /* Replace with your initials */
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 10%;
+    /* Center horizontally */
+    /* Adjust the horizontal position */
+    color: rgba(0, 0, 0, 0.5);
+    /* Adjust text color and opacity */
+    font-size: 32px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Adjust font weight if needed */
+    pointer-events: none;
+    /* Ensures the watermark doesn't interfere with interactions */
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    /* Push title and date to opposite sides */
+    align-items: center;
+    /* Vertically center align title and date */
+    border: 1px solid #ccc;
+    /* Add border for card styling */
+    padding: 10px;
+    margin: 10px;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 16px;
+    /* Remove default margin for h2 */
+}
+
+.card-date {
+    font-size: 14px;
+    /* Adjust font size for the date */
+}
