@@ -85,8 +85,10 @@
         <footer>
 
             <address>
-                <a href="mailto:mohmmed1422@hotmil.com">mohmmed1422@hotmil.com</a><br />
-                <a href="tel:+966507954843">+966507954843</a>
+                <ul id="list">
+
+                </ul>
+
             </address>
             <p>&copy; Mohammed aljaafari</p>
         </footer>
@@ -94,41 +96,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <div id="box" style="width: 50px; height: 50px; background-color: rgb(180, 180, 245);"></div>
-
     <script>
-        const box = document.getElementById('box');
 
-        // Function to move the box based on arrow key presses
-        function moveBox(event) {
-            const speed = 10; // Adjust the speed of movement
+        const data = [
+            { id: 1, name: " ", brief: "mohmmed1422@hotmil.com", href: "mailto:mohmmed1422@hotmil.com" },
+            { id: 2, name: " ", brief: "+966507954843", href: "tel:+966507954843" },
 
-            switch (event.key) {
-                case 'ArrowUp':
-                    box.style.top = (parseInt(box.style.top, 10) - speed) + 'px';
-                    break;
-                case 'ArrowDown':
-                    box.style.top = (parseInt(box.style.top, 10) + speed) + 'px';
-                    break;
-                case 'ArrowLeft':
-                    box.style.left = (parseInt(box.style.left, 10) - speed) + 'px';
-                    break;
-                case 'ArrowRight':
-                    box.style.left = (parseInt(box.style.left, 10) + speed) + 'px';
-                    break;
-                case 'Enter':
-                    box.click();
-                    break;
-            }
-        }
+        ];
 
-        // Initial position of the box
-        box.style.position = 'absolute';
-        box.style.top = '0px';
-        box.style.left = '0px';
 
-        // Add an event listener to listen for keyboard events
-        document.addEventListener('keydown', moveBox);
+        const listElement = document.getElementById("list");
+
+
+        data.forEach(item => {
+            const listItem = document.createElement("li");
+
+            const a = document.createElement("a");
+            a.href = item.href;
+            a.text = item.brief
+            listItem.appendChild(a);
+            listElement.appendChild(listItem);
+        });
     </script>
 </body>
 
