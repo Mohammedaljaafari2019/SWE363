@@ -49,3 +49,12 @@ h1 {
     cursor: pointer;
     margin-top: 20px;
 }
+
+.selected {
+    background-color: #FFFF00;
+    /* Change the background color to yellow when selected */
+    color: #000;
+    /* Change the text color to black when selected */
+    font-weight: bold;
+    /* Make the text bold when selected */
+}

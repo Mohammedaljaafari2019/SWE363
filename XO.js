@@ -1,7 +1,50 @@
 let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', ''];
 let gameOver = false;
+const boardd = document.getElementById("board");
+let cursorPosition = 0;
+let isGameOver = false;
+document.addEventListener("keydown", handleKeyPress);
 
+function handleKeyPress(event) {
+    const previousCell = document.getElementsByClassName('cell')[cursorPosition];
+    previousCell.classList.remove('selected');
+
+
+    switch (event.key) {
+        case "ArrowUp":
+            if (cursorPosition >= 3) {
+                cursorPosition -= 3;
+            }
+            break;
+        case "ArrowDown":
+            if (cursorPosition < 6) {
+                cursorPosition += 3;
+            }
+            break;
+        case "ArrowLeft":
+            if (cursorPosition % 3 !== 0) {
+                cursorPosition--;
+            }
+            break;
+        case "ArrowRight":
+            if (cursorPosition % 3 !== 2) {
+                cursorPosition++;
+            }
+            break;
+        case "Enter":
+            makeMove(cursorPosition);
+            break;
+        case "R", "r":
+            resetBoard();
+
+            break;
+        default:
+            break;
+    }
+    const currentCell = document.getElementsByClassName('cell')[cursorPosition];
+    currentCell.classList.add('selected');
+}
 function makeMove(cellIndex) {
     if (board[cellIndex] === '' && !gameOver) {
         board[cellIndex] = currentPlayer;
@@ -23,6 +66,7 @@ function checkWinner() {
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameOver = true;
             document.getElementById('status').innerText = `Player ${board[a]} wins!`;
+
         }
     }
 
@@ -33,14 +77,21 @@ function checkWinner() {
 }
 
 function resetBoard() {
+    console.log("hi");
     currentPlayer = 'X';
     board = ['', '', '', '', '', '', '', '', ''];
     gameOver = false;
+    cursorPosition = 0;
     const cells = document.getElementsByClassName('cell');
     for (const cell of cells) {
         cell.innerText = '';
+        cell.classList.remove('selected');
     }
     document.getElementById('status').innerText = '';
+    document.activeElement.blur();
 }
 
-resetBoard(); // Initialize the game
+
+
+
+
