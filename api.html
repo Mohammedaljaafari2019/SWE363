@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="img"></div>
+    <button id="b" style="width: 100px; height: 100px;">add more</button>
+    <script>
+        const contanir = document.getElementById("img");
+        function myfun() {
+
+            fetch("https://api.thecatapi.com/v1/images/search")
+                .then(Response => Response.json())
+                .then(data => {
+
+
+                    for (mode of data) {
+                        const img = document.createElement("img");
+                        img.src = mode.url;
+
+                        contanir.appendChild(img);
+                    }
+                })
+        }
+        window.onload = myfun();
+
+
+        const button = document.querySelector("button")
+        button.addEventListener("click", myfun)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

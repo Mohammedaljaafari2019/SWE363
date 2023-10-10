@@ -52,9 +52,9 @@ h1 {
 
 .selected {
     background-color: #FFFF00;
-    /* Change the background color to yellow when selected */
+
     color: #000;
-    /* Change the text color to black when selected */
+
     font-weight: bold;
-    /* Make the text bold when selected */
+
 }
