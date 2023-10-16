@@ -65,6 +65,48 @@
         <form action="">
             <input class="input" type="checkbox" id="promis" />
             <label for="promis">do you agree to share this information</label>
+
+        </form>
+        <form action="">
+            <label for="">Your signture / double click to rest</label>
+            <canvas id="canves">
+
+            </canvas>
+
+            <script>
+                const square = document.getElementById("canves");
+                const paper = square.getContext("2d");
+                var Mouse = false;
+
+
+                const clearButton = document.getElementById("clearButton");
+
+                square.addEventListener("mousedown", () => {
+                    Mouse = true;
+                });
+
+                square.addEventListener("mouseup", () => {
+                    Mouse = false;
+                    paper.beginPath();
+                });
+
+                square.addEventListener("mousemove", (e) => {
+                    if (!Mouse) return;
+
+                    paper.lineWidth = 1;
+                    paper.lineCap = "round";
+                    paper.strokeStyle = "blue";
+                    paper.lineTo(e.clientX - square.offsetLeft, e.clientY - square.offsetTop);
+                    paper.stroke();
+                    paper.beginPath();
+                    paper.moveTo(e.clientX - square.offsetLeft, e.clientY - square.offsetTop);
+                });
+                document.addEventListener("dblclick", () => {
+                    paper.clearRect(0, 0, square.width, square.height);
+                });
+
+
+            </script>
         </form>
         <form action="thankyou.html">
             <input class="input" type="submit" value="submit">
