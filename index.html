@@ -63,20 +63,20 @@
                 </div>
             </nav>
             <a href="index-ar.html"><button>AR</button></a>
-            <header>
+            <!-- <header>
 
 
 
-                <h1 class="heading">welcome to my blog</h1>
+                <h1 id="text" class="heading">?</h1>
 
-            </header>
+            </header> -->
 
-            <h2 class="heading">
+            <!-- <h2 class="heading">
                 Hello my name is Mohammed aljaafari
                 Software engniring 23 years old
-            </h2>
+            </h2> -->
         </main>
-        <figure class="card">
+        <figure id="figure" class="card">
             <h2 class="card-title">Photo of me</h2s>
                 <p class="card-date">October 3, 2023</p>
                 <div class="watermarked-image-container"> <img src="photo\100064799.jpg" alt="image for Me"
@@ -122,6 +122,52 @@
             listItem.appendChild(a);
             listElement.appendChild(listItem);
         });
+        class text1 {
+            text;
+            constructor(text1) {
+                this.text = text1;
+            }
+            gettext() {
+                return this.text;
+            }
+        }
+        // let y = [new text1("welcome to my blog"), new text1("Hello my name is Mohammed aljaafari Software engniring 23 years old")];
+        let y = [];
+
+        y.push(new text1("welcome to my blog"));
+        y.push(new text1("Hello my name is Mohammed aljaafari Software engniring 23 years old"));
+        for (let i = 0; i < y.length; i++) {
+            if (i == 0) {
+
+                console.log(i);
+                var header = document.createElement("header");
+                let x = document.createElement("h1");
+                x.textContent = y[i].gettext();
+                x.setAttribute("class", "heading");
+
+                header.append(x);
+                header.style.display = "none";
+                document.body.insertBefore(header, document.body.firstChild);
+
+
+            }
+            else {
+                var z = document.createElement("h2");
+                z.textContent = y[i].gettext();
+                z.setAttribute("class", "heading");
+                z.style.display = "none"
+                document.body.insertBefore(z, document.body.childNodes[3]);
+            }
+        }
+        setTimeout(() => {
+
+            // Change the display property to "none"
+            header.style.display = "flex";
+            z.style.display = "flex"
+        }, 3000);
+
+
+        // document.getElementById("text").textContent = x.gettext();
     </script>
     <script src="3d.js"></script>
 </body>

@@ -44,9 +44,9 @@ function resetScreensaverTimeout() {
 }
 
 // Add event listeners for user activity
-window.addEventListener("mousemove", resetScreensaverTimeout);
-window.addEventListener("keydown", resetScreensaverTimeout);
-window.addEventListener("click", resetScreensaverTimeout);
+document.addEventListener("mousemove", resetScreensaverTimeout);
+document.addEventListener("keydown", resetScreensaverTimeout);
+document.addEventListener("click", resetScreensaverTimeout);
 
 // Initial setup
 resetScreensaverTimeout();

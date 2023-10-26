@@ -6,3 +6,4 @@ setTimeout(() => {
     // Change the display property to "none"
     element.style.display = "none";
 }, 3000);
+
