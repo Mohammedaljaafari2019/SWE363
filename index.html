@@ -132,18 +132,26 @@
             }
         }
         // let y = [new text1("welcome to my blog"), new text1("Hello my name is Mohammed aljaafari Software engniring 23 years old")];
+        const add = function (a, b) {
+            return a + b;
+        };
+
+        console.log(add(5, 3));
         let y = [];
 
         y.push(new text1("welcome to my blog"));
         y.push(new text1("Hello my name is Mohammed aljaafari Software engniring 23 years old"));
         for (let i = 0; i < y.length; i++) {
             if (i == 0) {
-
-                console.log(i);
                 var header = document.createElement("header");
-                let x = document.createElement("h1");
-                x.textContent = y[i].gettext();
-                x.setAttribute("class", "heading");
+                console.log(i);
+                const x = (function (z) {
+                    return document.createElement("h1").textContent = z[i].gettext();
+                })(y);
+
+
+
+                // x.setAttribute("class", "heading");
 
                 header.append(x);
                 header.style.display = "none";

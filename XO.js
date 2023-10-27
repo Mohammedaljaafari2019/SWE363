@@ -11,40 +11,61 @@ function handleKeyPress(event) {
     previousCell.classList.remove('selected');
 
 
+    function moveCursor(deltaX, deltaY) {
+        const newRow = Math.floor(cursorPosition / 3) + deltaY;
+        const newCol = (cursorPosition + deltaX) % 3;
+
+        if (newRow >= 0 && newRow < 3 && newCol >= 0 && newCol < 3) {
+            cursorPosition = newRow * 3 + newCol;
+        }
+    }
+    function hover(cursorPosition) {
+        const currentCell = document.getElementsByClassName('cell')[cursorPosition];
+        currentCell.classList.add('selected');
+    }
+    function handleArrowKey(key) {
+        switch (key) {
+            case "ArrowUp":
+                moveCursor(0, -1);
+                hover(cursorPosition);
+                break;
+            case "ArrowDown":
+                moveCursor(0, 1);
+                hover(cursorPosition);
+                break;
+            case "ArrowLeft":
+                moveCursor(-1, 0);
+                hover(cursorPosition);
+                break;
+            case "ArrowRight":
+                moveCursor(1, 0);
+                hover(cursorPosition);
+                break;
+        }
+    }
+
     switch (event.key) {
         case "ArrowUp":
-            if (cursorPosition >= 3) {
-                cursorPosition -= 3;
-            }
-            break;
         case "ArrowDown":
-            if (cursorPosition < 6) {
-                cursorPosition += 3;
-            }
-            break;
         case "ArrowLeft":
-            if (cursorPosition % 3 !== 0) {
-                cursorPosition--;
-            }
-            break;
         case "ArrowRight":
-            if (cursorPosition % 3 !== 2) {
-                cursorPosition++;
-            }
+            handleArrowKey(event.key);
             break;
         case "Enter":
             makeMove(cursorPosition);
             break;
-        case "R", "r":
+        case "R":
+        case "r":
             resetBoard();
-
             break;
         default:
             break;
     }
-    const currentCell = document.getElementsByClassName('cell')[cursorPosition];
-    currentCell.classList.add('selected');
+
+
 }
+
+
 function makeMove(cellIndex) {
     if (board[cellIndex] === '' && !gameOver) {
         board[cellIndex] = currentPlayer;
