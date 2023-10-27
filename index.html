@@ -132,6 +132,15 @@
             }
         }
         // let y = [new text1("welcome to my blog"), new text1("Hello my name is Mohammed aljaafari Software engniring 23 years old")];
+        const number = [10, 2, 3, 4, 5];
+        const square = number.map((x) => x * x);
+        console.log(square);
+        const initialValue = 0;
+        const red = number.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+
+        console.log(red);
+        const fil = number.filter((x) => x > 5);
+        console.log(fil);
         const add = function (a, b) {
             return a + b;
         };
