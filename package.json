@@ -1,0 +1,19 @@
+{
+  "name": "swe363-3",
+  "version": "1.0.0",
+  "description": "nothing",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

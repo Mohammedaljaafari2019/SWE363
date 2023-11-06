@@ -39,6 +39,7 @@ function hideScreensaver() {
 }
 
 function resetScreensaverTimeout() {
+    hideScreensaver();
     clearTimeout(screensaverTimeout);
     screensaverTimeout = setTimeout(showScreensaver, 60000); // Show screensaver after 1 minute of inactivity
 }
