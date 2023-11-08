@@ -6,6 +6,7 @@ const rl = readline.createInterface({
 });
 
 // Predefined questions and answers
+// can be add more 
 const responses = {
   "how are you?": "I'm just a chatbot, so I don't have feelings, but I'm here to help!",
   "what's your name?": "I'm just a bot, so I don't have a name. You can call me ChatBot!",
