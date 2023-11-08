@@ -1,44 +1,41 @@
 const fs = require('fs');
 const path = require('path');
-const commander = require('commander');
+const readline = require('readline');
 
-commander
-  .option('-s, --source <source>', 'Source directory path')
-  .option('-t, --target <target>', 'Target directory path')
-  .parse(process.argv);
+// Get command-line arguments
+const args = process.argv.slice(2); 
 
-const sourceDir = commander.source;
-const targetDir = commander.target;
-
-if (!sourceDir || !targetDir) {
-  console.error('Please provide both source and target directory paths.');
+// Check if there are enough arguments
+if (args.length < 3) {
+  console.error('Usage: node copyFiles.js <source directory> <target directory> <file extensions>');
   process.exit(1);
 }
 
-function copyFilesWithExtensions(sourceDir, targetDir, extensions) {
-  fs.readdir(sourceDir, (err, files) => {
-    if (err) {
-      console.error(`Error reading source directory: ${err}`);
-      return;
-    }
+const sourceDir = args[0];
+const targetDir = args[1];
+const extensions = args[2].split(',');
+
+async function copyFiles() {
+  try {
+    const files = await fs.promises.readdir(sourceDir);
 
     for (const file of files) {
       const sourceFilePath = path.join(sourceDir, file);
       const targetFilePath = path.join(targetDir, file);
 
       const fileExtension = path.extname(file).toLowerCase();
+
       if (extensions.includes(fileExtension)) {
-        fs.copyFile(sourceFilePath, targetFilePath, (copyErr) => {
-          if (copyErr) {
-            console.error(`Error copying ${file}: ${copyErr}`);
-          } else {
-            console.log(`Copied ${file} to ${targetDir}`);
-          }
-        });
+        await fs.promises.copyFile(sourceFilePath, targetFilePath);
+        console.log(`Copied ${file} to ${targetDir}`);
       }
     }
-  });
+
+    console.log('Copy completed!');
+  } catch (err) {
+    console.error(`Error copying files: ${err}`);
+  }
 }
 
-const extensionsToCopy = ['.txt', '.jpg']; // Add more extensions as needed
-copyFilesWithExtensions(sourceDir, targetDir, extensionsToCopy);
+copyFiles();
+
