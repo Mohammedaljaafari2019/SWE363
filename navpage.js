@@ -8,17 +8,17 @@ app.get('/', (req, res) => {
 });
 
 // Set up a route for a different page (GET request)
-app.get('/about', (req, res) => {
+app.get('/details', (req, res) => {
   res.send('This is the about page.');
 });
 
 // Set up a route for a page that accepts POST requests
-app.post('/submit', (req, res) => {
+app.post('/thankyou', (req, res) => {
   res.send('Form submitted successfully!');
 });
 
 // Set up a route for a page that accepts both GET and POST requests
-app.route('/contact')
+app.route('/second')
   .get((req, res) => {
     res.send('Contact us!');
   })
