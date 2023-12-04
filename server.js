@@ -4,9 +4,11 @@ const host ="localhost";
 const PORT=8080; 
 
 const requestListener = function (req, res) {
-    res.setHeader("Content-Type", "text/index");
+    res.setHeader("Content-Type", "text/html");
     res.writeHead(200);
-    res.end("My first server!");
+    var read=fs.createReadStream(__dirname+'/index.html','utf8')
+    read.pipe(res);
+    
 };
 
 
